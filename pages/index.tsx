@@ -87,7 +87,75 @@ const Home: NextPage = () => {
       fabricCanvas.add(obj).renderAll();
     });
 
-    fabricCanvas.add(circle1, circle2, rect1, rect2, tri1, tri2);
+    const text1 = new fabric.Text("Fabric", {
+      top: 340,
+      left: 100,
+      angle: -4,
+      fill: "#FE0908",
+      fontSize: 30,
+      strokeWidth: 1,
+      fontFamily: "sans-serif",
+    });
+
+    const text2 = new fabric.Text("has", {
+      top: 300,
+      left: 200,
+      fontSize: 80,
+      fontWeight: 800,
+      fill: "#EEEEEE",
+      stroke: "red",
+      strokeWidth: 2,
+      fontFamily: "sans-serif",
+    });
+
+    const text3 = new fabric.Text("multiline text", {
+      top: 400,
+      left: 100,
+      angle: -4,
+      fontSize: 35,
+      fontWeight: 600,
+      fill: "#008001",
+      textBackgroundColor: "#EEFFEE",
+      fontFamily: "sans-serif",
+    });
+
+    const text4 = new fabric.Text("with extensive \ndecoration support", {
+      top: 450,
+      left: 100,
+      angle: -4,
+      lineHeight: 1,
+      fontSize: 30,
+      underline: true,
+      textAlign: "center",
+      fill: "#0000FF",
+      fontFamily: "sans-serif",
+    });
+
+    const text5 = new fabric.Text("and \neven \nalignment", {
+      top: 520,
+      left: 160,
+      fontSize: 30,
+      angle: 4,
+      fill: "#808080",
+      textAlign: "right",
+      lineHeight: 1,
+      fontStyle: "italic",
+      fontFamily: "sans-serif",
+    });
+
+    fabricCanvas.add(
+      circle1,
+      circle2,
+      rect1,
+      rect2,
+      tri1,
+      tri2,
+      text1,
+      text2,
+      text3,
+      text4,
+      text5
+    );
     fabricCanvas.bringToFront(circle1);
     fabricCanvas.bringToFront(circle2);
     fabricCanvas.sendToBack(tri1);
