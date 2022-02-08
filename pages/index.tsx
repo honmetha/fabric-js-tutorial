@@ -143,6 +143,52 @@ const Home: NextPage = () => {
       fontFamily: "sans-serif",
     });
 
+    const gradientCircle = new fabric.Circle({
+      top: 350,
+      left: 600,
+      radius: 60,
+      stroke: "#2727F4",
+      strokeWidth: 1,
+    });
+
+    gradientCircle.set(
+      "fill",
+      new fabric.Gradient({
+        type: "radial",
+        gradientUnits: "pixels",
+        coords: { x1: 60, y1: 50, x2: 30, y2: 60, r1: 60, r2: 1 },
+        colorStops: [
+          { offset: 0, color: "#2727F4" },
+          { offset: 1, color: "#FFFFFF" },
+        ],
+      })
+    );
+
+    const gradientRect = new fabric.Rect({
+      top: 480,
+      left: 600,
+      width: 170,
+      height: 80,
+      angle: 10,
+      fill: "#FF5655",
+      stroke: "black",
+      strokeWidth: 1,
+    });
+
+    gradientRect.set(
+      "fill",
+      new fabric.Gradient({
+        type: "linear",
+        gradientUnits: "pixels",
+        coords: { x1: 120, y1: 0, x2: 20, y2: 0 },
+        colorStops: [
+          { offset: 0, color: "#6BC799" },
+          { offset: 0.5, color: "#C56D99" },
+          { offset: 1, color: "#FBC40C" },
+        ],
+      })
+    );
+
     fabricCanvas.add(
       circle1,
       circle2,
@@ -154,7 +200,9 @@ const Home: NextPage = () => {
       text2,
       text3,
       text4,
-      text5
+      text5,
+      gradientCircle,
+      gradientRect
     );
     fabricCanvas.bringToFront(circle1);
     fabricCanvas.bringToFront(circle2);
